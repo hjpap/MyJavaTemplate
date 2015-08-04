@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wei.zuba.test.dao.UserDao">
+    
+	<sql id="UserColumns">
+		a.ID AS "id",
+		a.LOGIN_NAME AS "loginName",
+		a.PASSWORD AS "password",
+		a.USER_NAME AS "userName",
+		a.EMAIL AS "email"
+	</sql>
+	
+	<sql id="UserJoins">
+	</sql>
+    
+	<select id="get" resultType="com.wei.zuba.test.entity.User">
+		SELECT 
+			<include refid="UserColumns"/>
+		FROM w_user a
+		<include refid="UserJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="com.wei.zuba.test.entity.User">
+		SELECT 
+			<include refid="UserColumns"/>
+		FROM w_user a
+		ORDER BY a.id ASC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO w_user(
+			ID,
+			LOGIN_NAME,
+			PASSWORD,
+			USER_NAME,
+			EMAIL
+		) VALUES (
+			#{id},
+			#{loginName},
+			#{password},
+			#{userName},
+			#{email}
+		)
+	</insert>
+	
+	<update id="delete">
+		DELETE FROM w_user WHERE id = #{id}
+	</update>
+	
+</mapper>

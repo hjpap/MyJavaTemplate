@@ -1,0 +1,38 @@
+description = '线上web项目'
+
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+
+war {
+	baseName = 'zuba_web'
+	version = version
+}
+	
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'
+	}
+}
+	
+dependencies {
+	compile project(':zuba_share')
+	//lombok
+	//providedCompile "org.projectlombok:lombok:1.14.8"
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile("org.springframework.boot:spring-boot-starter-aop")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-hateoas")
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("javax.servlet:jstl:1.2")
+	compile("javax.servlet:javax.servlet-api")
+	providedCompile ("org.apache.tomcat.embed:tomcat-embed-jasper")
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+	
+	testCompile("org.springframework.boot:spring-boot-starter-test") 
+	
+	compile 'opensymphony:sitemesh:2.4.2'
+	
+}
