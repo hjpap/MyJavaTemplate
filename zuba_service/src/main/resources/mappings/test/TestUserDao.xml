@@ -13,7 +13,7 @@
 	<sql id="UserJoins">
 	</sql>
     
-	<select id="get" resultType="com.wei.zuba.test.entity.User">
+	<select id="get" resultType="com.wei.zuba.entity.User">
 		SELECT 
 			<include refid="UserColumns"/>
 		FROM w_user a
@@ -21,7 +21,7 @@
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findList" resultType="com.wei.zuba.test.entity.User">
+	<select id="findList" resultType="com.wei.zuba.entity.User">
 		SELECT 
 			<include refid="UserColumns"/>
 		FROM w_user a

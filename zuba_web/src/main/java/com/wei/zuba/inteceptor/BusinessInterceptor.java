@@ -1,4 +1,4 @@
-package sample.test.inteceptor;
+package com.wei.zuba.inteceptor;
 
 
 import javax.servlet.ServletException;

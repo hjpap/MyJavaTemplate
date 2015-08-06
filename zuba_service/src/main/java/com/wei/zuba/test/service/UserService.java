@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.wei.zuba.common.service.BaseService;
 import com.wei.zuba.test.dao.UserDao;
-import com.wei.zuba.test.entity.User;
+import com.wei.zuba.entity.User;
 
 @Service
 @Transactional(readOnly = true)

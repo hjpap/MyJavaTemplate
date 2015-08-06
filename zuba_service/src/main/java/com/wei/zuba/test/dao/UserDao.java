@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.wei.zuba.common.persistence.CrudDao;
 import com.wei.zuba.common.persistence.annotation.MyBatisDao;
-import com.wei.zuba.test.entity.User;
+import com.wei.zuba.entity.User;
 
 /**
  * 用户DAO接口

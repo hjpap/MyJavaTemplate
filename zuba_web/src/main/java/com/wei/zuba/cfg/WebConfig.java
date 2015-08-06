@@ -1,4 +1,4 @@
-package sample.test.cfg;
+package com.wei.zuba.cfg;
 
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import sample.test.inteceptor.BusinessInterceptor;
+import com.wei.zuba.inteceptor.BusinessInterceptor;
 
 
 @Configuration

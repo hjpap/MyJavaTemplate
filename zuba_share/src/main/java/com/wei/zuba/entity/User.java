@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.wei.zuba.test.entity;
+package com.wei.zuba.entity;
 
 import org.hibernate.validator.constraints.*;
 
@@ -31,6 +31,15 @@ public class User {
 	private String userName;
 	private String email;	// 邮箱
 	
+	private boolean enableStatus;
+	
+	public boolean getEnableStatus() {
+		return enableStatus;
+	}
+	public void setEnableStatus(boolean enableStatus) {
+		this.enableStatus = enableStatus;
+	}
+	
 	@Length(min=1, max=100, message="登录名长度必须介于 1 和 100 之间")
 	public String getLoginName() {
 		return loginName;
@@ -53,5 +62,6 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	
 }
