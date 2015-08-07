@@ -3,11 +3,13 @@ package com.wei.zuba.vo;
 
 import java.io.Serializable;
 import java.util.Map;
+
 import org.springframework.util.StringUtils;
-import lombok.NoArgsConstructor;
+
 import com.google.common.collect.Maps;
 import com.wei.zuba.utils.Json;
-import com.wei.zuba.utils.MapBuilder;
+
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class ResultVo implements Serializable {

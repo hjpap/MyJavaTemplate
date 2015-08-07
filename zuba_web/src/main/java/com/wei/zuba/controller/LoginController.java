@@ -24,9 +24,6 @@ public class LoginController {
 		return new ModelAndView("admin", "messages", "hello World@aaaaa");
 	}
 	
-	@RequestMapping(value="/",method=RequestMethod.GET)
-	public ModelAndView index() {
-		return new ModelAndView("home", "messages", "hello World@aaaaa");
-	}
+	
 	
 }
