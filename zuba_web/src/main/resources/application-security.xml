@@ -74,7 +74,7 @@
         <!-- <property name="defaultTargetUrl" value="/user" />
         <property name="forwardToDestination" value="false" /> -->
         <property name="targetUrlParameter" value="next"/>
-        <property name="defaultTargetUrl" value="/account/user"/>
+        <property name="defaultTargetUrl" value="/account/"/>
         <!-- <property name="useReferer" value="true"/> -->
     </bean>
 

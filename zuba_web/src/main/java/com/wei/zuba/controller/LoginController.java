@@ -19,7 +19,7 @@ public class LoginController {
 		return new ModelAndView("admin", "messages", "hello World@aaaaa");
 	}
 	
-	@RequestMapping(value="/account",method=RequestMethod.POST)
+	@RequestMapping(value="/account",method=RequestMethod.GET)
 	public ModelAndView admin() {
 		return new ModelAndView("admin", "messages", "hello World@aaaaa");
 	}

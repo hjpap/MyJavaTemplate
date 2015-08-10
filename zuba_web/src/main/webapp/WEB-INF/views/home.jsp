@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>xx</title>
-
+<script src="js/des.js"></script>
 </head>
 <body>
 xxx:
