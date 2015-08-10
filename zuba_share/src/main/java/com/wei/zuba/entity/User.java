@@ -3,14 +3,17 @@
  */
 package com.wei.zuba.entity;
 
-import org.hibernate.validator.constraints.*;
+import java.io.Serializable;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * 用户Entity
  * @author ThinkGem
  * @version 2013-12-05
  */
-public class User {
+public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
