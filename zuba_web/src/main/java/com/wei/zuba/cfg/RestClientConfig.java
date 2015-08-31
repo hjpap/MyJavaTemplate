@@ -7,6 +7,8 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -54,17 +56,30 @@ public class RestClientConfig {
 	@Setter
 	private String smsServicePrefix;
 	
+	@Getter
+	@Setter
+	int maxConnection;
+	@Getter
+	@Setter
+	int maxConnectionPerRoute;
+	
 	@Bean
 	public ClientHttpRequestFactory simpleClientHttpRequestFactory() {
-		HttpComponentsClientHttpRequestFactory simpleClientHttpRequestFactory  = new HttpComponentsClientHttpRequestFactory();
+		HttpComponentsClientHttpRequestFactory simpleClientHttpRequestFactory  = new HttpComponentsClientHttpRequestFactory(httpClient());
 		simpleClientHttpRequestFactory.setReadTimeout(client.readTimeout);
 		simpleClientHttpRequestFactory.setConnectTimeout(client.connectTimeout);
 		return simpleClientHttpRequestFactory;
 	}
 	
 	@Bean
+	public HttpClient httpClient() {
+		HttpClient client =  HttpClients.custom().setMaxConnTotal(maxConnection).setMaxConnPerRoute(maxConnectionPerRoute).build();
+		return client;
+	}
+	
+	@Bean
 	public RestClient restClient() {
-		RestClient restClient = new RestClient();
+		RestClient restClient = new RestClient(simpleClientHttpRequestFactory());
 		 List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
 		 configureMessageConverters(messageConverters);
 		 restClient.setMessageConverters(messageConverters);
